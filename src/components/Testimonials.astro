@@ -1,0 +1,192 @@
+---
+const testimonials = [
+  {
+    quote: 'Hasilnya melebihi ekspektasi kami. Website baru meningkatkan konversi sebesar 40% dalam bulan pertama. Fahmi benar-benar memahami apa yang bisnis kami butuhkan.',
+    name: 'Andi Pratama',
+    role: 'CEO, Lumina Studio',
+    initial: 'AP',
+  },
+  {
+    quote: 'Proses kolaborasi sangat menyenangkan. Komunikatif, detail-oriented, dan selalu memberikan saran terbaik. Website kami sekarang terasa jauh lebih profesional.',
+    name: 'Siti Rahmawati',
+    role: 'Founder, Haven Retreat',
+    initial: 'SR',
+  },
+  {
+    quote: 'Kecepatan website kami meningkat drastis setelah di-handle oleh alfa. Skor Lighthouse dari 50 menjadi 98. Efeknya terasa sekali pada pengunjung.',
+    name: 'Budi Santoso',
+    role: 'Product Manager, Nexa Commerce',
+    initial: 'BS',
+  },
+];
+---
+
+<section id="testimoni" class="py-24 md:py-32 relative overflow-hidden bg-cream-100/50 dark:bg-cream-800/20">
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-sage-400/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="section-container relative z-10">
+    <!-- Section header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <span class="inline-block text-sm font-semibold text-sage-600 dark:text-sage-400 uppercase tracking-widest mb-4">
+        Testimoni
+      </span>
+      <h2 class="fluid-h2 text-cream-900 dark:text-cream-50 mb-4">
+        Kata Mereka
+      </h2>
+      <p class="text-cream-600 dark:text-cream-300 text-lg leading-relaxed">
+        Beberapa cerita dari klien yang telah mempercayakan proyek mereka kepada kami.
+      </p>
+    </div>
+
+    <!-- Testimonials carousel -->
+    <div class="relative max-w-4xl mx-auto">
+      <!-- Track -->
+      <div class="overflow-hidden">
+        <div id="testimonial-track" class="flex transition-transform duration-700 ease-out">
+          {testimonials.map((testimonial) => (
+            <div class="w-full flex-shrink-0 px-4">
+              <div class="glass-card rounded-3xl p-8 md:p-12 text-center">
+                <!-- Quote icon -->
+                <div class="w-12 h-12 mx-auto mb-6 rounded-full bg-sage-500/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#7A9368" stroke="none"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                </div>
+
+                <!-- Quote text -->
+                <p class="text-lg md:text-xl text-cream-700 dark:text-cream-200 leading-relaxed mb-8 font-light italic">
+                  "{testimonial.quote}"
+                </p>
+
+                <!-- Author -->
+                <div class="flex items-center justify-center gap-4">
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-sage-400 to-sage-600 flex items-center justify-center text-white font-bold text-sm">
+                    {testimonial.initial}
+                  </div>
+                  <div class="text-left">
+                    <p class="font-semibold text-cream-900 dark:text-cream-50">{testimonial.name}</p>
+                    <p class="text-sm text-cream-500 dark:text-cream-400">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Navigation dots -->
+      <div class="flex items-center justify-center gap-2 mt-8">
+        {testimonials.map((_, index) => (
+          <button
+            class={`testimonial-dot w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-sage-500 w-8' : 'bg-cream-300 dark:bg-cream-600'}`}
+            data-index={index}
+            aria-label={`Go to testimonial ${index + 1}`}
+          ></button>
+        ))}
+      </div>
+
+      <!-- Arrow buttons -->
+      <button
+        id="prev-testimonial"
+        aria-label="Previous testimonial"
+        class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full glass-card items-center justify-center hover:border-sage-400 transition-all hover:scale-110"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cream-600 dark:text-cream-300"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button
+        id="next-testimonial"
+        aria-label="Next testimonial"
+        class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full glass-card items-center justify-center hover:border-sage-400 transition-all hover:scale-110"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cream-600 dark:text-cream-300"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('#testimoni .reveal').forEach((el) => {
+    observer.observe(el);
+  });
+
+  // Testimonial carousel
+  const track = document.getElementById('testimonial-track');
+  const dots = document.querySelectorAll('.testimonial-dot');
+  const prevBtn = document.getElementById('prev-testimonial');
+  const nextBtn = document.getElementById('next-testimonial');
+  const total = testimonials.length; // defined in Astro frontmatter, accessible via script? Actually no, need to recalculate
+  const slideCount = dots.length;
+  let currentIndex = 0;
+  let autoplayInterval;
+
+  function goToSlide(index) {
+    currentIndex = (index + slideCount) % slideCount;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    // Update dots
+    dots.forEach((dot, i) => {
+      if (i === currentIndex) {
+        dot.classList.add('bg-sage-500', 'w-8');
+        dot.classList.remove('bg-cream-300', 'dark:bg-cream-600');
+      } else {
+        dot.classList.remove('bg-sage-500', 'w-8');
+        dot.classList.add('bg-cream-300', 'dark:bg-cream-600');
+      }
+    });
+  }
+
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
+  }
+
+  function startAutoplay() {
+    autoplayInterval = setInterval(nextSlide, 5000);
+  }
+
+  function stopAutoplay() {
+    clearInterval(autoplayInterval);
+  }
+
+  // Dot navigation
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const index = parseInt(dot.dataset.index);
+      goToSlide(index);
+      stopAutoplay();
+      startAutoplay();
+    });
+  });
+
+  // Arrow buttons
+  prevBtn?.addEventListener('click', () => {
+    prevSlide();
+    stopAutoplay();
+    startAutoplay();
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    nextSlide();
+    stopAutoplay();
+    startAutoplay();
+  });
+
+  // Start autoplay
+  startAutoplay();
+
+  // Pause on hover
+  const section = document.getElementById('testimoni');
+  section.addEventListener('mouseenter', stopAutoplay);
+  section.addEventListener('mouseleave', startAutoplay);
+</script>

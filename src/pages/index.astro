@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Portfolio from '../components/Portfolio.astro';
+import About from '../components/About.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Primary Meta Tags -->
+    <title>alfa. — Jasa Pembuatan Website Profesional | Fahmi Alfatah</title>
+    <meta name="title" content="alfa. — Jasa Pembuatan Website Profesional | Fahmi Alfatah" />
+    <meta name="description" content="Layanan pembuatan website premium dengan desain elegan, performa tinggi, dan pengalaman pengguna luar biasa. Dibuat oleh Fahmi Alfatah." />
+    <meta name="author" content="Fahmi Alfatah" />
+    <meta name="keywords" content="jasa pembuatan website, web developer, portfolio website, Astro, Tailwind CSS, UI UX design" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alfafahmi.com/" />
+    <meta property="og:title" content="alfa. — Jasa Pembuatan Website Profesional" />
+    <meta property="og:description" content="Website premium dengan desain elegan dan performa tinggi. Dibuat dengan teliti untuk brandmu." />
+    <meta property="og:image" content="/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://alfafahmi.com/" />
+    <meta property="twitter:title" content="alfa. — Jasa Pembuatan Website Profesional" />
+    <meta property="twitter:description" content="Website premium dengan desain elegan dan performa tinggi." />
+    <meta property="twitter:image" content="/og-image.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://alfafahmi.com/" />
+
+    <!-- Preload fonts to prevent FOIT -->
+    <link rel="preload" href="/fonts/space-grotesk-vietnamese-700-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#FAF9F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1C1B18" media="(prefers-color-scheme: dark)" />
+
+    <!-- Prevent dark mode flash -->
+    <script is:inline>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+
+  <body class="antialiased">
+    <Navbar />
+    <main>
+      <Hero />
+      <Services />
+      <Portfolio />
+      <About />
+      <Testimonials />
+      <Contact />
+    </main>
+    <Footer />
+  </body>
+</html>

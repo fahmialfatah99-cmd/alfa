@@ -1,0 +1,101 @@
+---
+const services = [
+  {
+    icon: 'code',
+    title: 'Website Development',
+    description: 'Pembangunan website custom dengan teknologi modern seperti Astro, React, dan Next.js. Cepat, ringan, dan SEO-friendly.',
+  },
+  {
+    icon: 'palette',
+    title: 'UI/UX Design',
+    description: 'Desain antarmuka yang elegan dan pengalaman pengguna yang intuitif. Berfokus pada konversi dan kepuasan pengguna.',
+  },
+  {
+    icon: 'zap',
+    title: 'Performance Optimization',
+    description: 'Optimasi kecepatan website untuk skor Lighthouse 95+. Lazy loading, code splitting, dan asset optimization.',
+  },
+  {
+    icon: 'settings',
+    title: 'Maintenance & Support',
+    description: 'Perawatan berkelanjutan, update konten, perbaikan bug, dan dukungan teknis untuk menjaga website tetap prima.',
+  },
+];
+---
+
+<section id="layanan" class="py-24 md:py-32 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute top-1/2 -left-40 w-80 h-80 bg-sage-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="section-container relative z-10">
+    <!-- Section header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <span class="inline-block text-sm font-semibold text-sage-600 dark:text-sage-400 uppercase tracking-widest mb-4">
+        Layanan
+      </span>
+      <h2 class="fluid-h2 text-cream-900 dark:text-cream-50 mb-4">
+        Yang Kami Tawarkan
+      </h2>
+      <p class="text-cream-600 dark:text-cream-300 text-lg leading-relaxed">
+        Layanan pembuatan website end-to-end dengan kualitas premium. Dari konsep hingga launch, kami tangani semuanya.
+      </p>
+    </div>
+
+    <!-- Services grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger">
+      {services.map((service) => (
+        <div class="glass-card rounded-2xl p-8 group cursor-default">
+          <!-- Icon -->
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-sage-500/10 to-sage-600/10 dark:from-sage-400/10 dark:to-sage-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            {service.icon === 'code' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sage-600 dark:text-sage-400"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            )}
+            {service.icon === 'palette' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sage-600 dark:text-sage-400"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.555C21.965 6.012 17.461 2 12 2z"/></svg>
+            )}
+            {service.icon === 'zap' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sage-600 dark:text-sage-400"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            )}
+            {service.icon === 'settings' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sage-600 dark:text-sage-400"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            )}
+          </div>
+
+          <h3 class="text-lg font-display font-bold text-cream-900 dark:text-cream-50 mb-3">
+            {service.title}
+          </h3>
+          <p class="text-sm text-cream-600 dark:text-cream-300 leading-relaxed">
+            {service.description}
+          </p>
+
+          <!-- Learn more arrow -->
+          <div class="mt-6 flex items-center gap-2 text-sage-600 dark:text-sage-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Pelajari lebih lanjut
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Scroll reveal for services section
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px',
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('#layanan .reveal, #layanan .reveal-stagger').forEach((el) => {
+    observer.observe(el);
+  });
+</script>

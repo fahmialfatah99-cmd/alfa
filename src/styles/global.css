@@ -1,0 +1,227 @@
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-cream-50 text-cream-800 font-sans font-light;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  .dark body {
+    @apply bg-cream-900 text-cream-100;
+  }
+
+  ::selection {
+    @apply bg-sage-500/30 text-cream-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  /* Fluid typography */
+  .fluid-h1 {
+    font-size: clamp(2.5rem, 7vw + 1rem, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+
+  .fluid-h2 {
+    font-size: clamp(1.75rem, 3vw + 1rem, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .fluid-lead {
+    font-size: clamp(1rem, 0.5vw + 0.9rem, 1.25rem);
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    @apply bg-white/40 dark:bg-cream-800/40 backdrop-blur-md border border-white/50 dark:border-cream-700/30;
+    box-shadow: 0 8px 32px rgba(74, 70, 62, 0.06);
+  }
+
+  .glass-card:hover {
+    @apply bg-white/60 dark:bg-cream-800/60 border-sage-400/30;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(74, 70, 62, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Navbar glass effect */
+  .nav-glass {
+    @apply bg-cream-50/70 dark:bg-cream-900/70 backdrop-blur-lg border-b border-cream-200/50 dark:border-cream-800/50;
+  }
+
+  /* Button primary */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-sage-600 text-white font-medium text-sm;
+    @apply hover:bg-sage-700 hover:shadow-lg hover:shadow-sage-600/25;
+    @apply transition-all duration-300 ease-out;
+    @apply focus:outline-none focus:ring-2 focus:ring-sage-500 focus:ring-offset-2 focus:ring-offset-cream-50;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Button secondary */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-cream-300 dark:border-cream-700 text-cream-800 dark:text-cream-100 font-medium text-sm;
+    @apply hover:border-sage-500 hover:text-sage-600 dark:hover:text-sage-400;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Form input */
+  .form-input {
+    @apply w-full px-5 py-3.5 bg-white/60 dark:bg-cream-800/40 border border-cream-200 dark:border-cream-700 rounded-xl;
+    @apply text-cream-800 dark:text-cream-100 placeholder-cream-400;
+    @apply focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-500/20;
+    @apply transition-all duration-300;
+  }
+
+  /* Link hover effect */
+  .nav-link {
+    @apply relative text-sm font-medium text-cream-700 dark:text-cream-200 hover:text-sage-600 dark:hover:text-sage-400 transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-sage-500 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-6xl mx-auto px-6 md:px-8;
+  }
+
+  /* Skeleton shimmer */
+  .skeleton {
+    background: linear-gradient(90deg, #EBE8E1 25%, #F5F3EF 50%, #EBE8E1 75%);
+    background-size: 200% 100%;
+    @apply animate-shimmer rounded-lg;
+  }
+
+  /* Portfolio tilt card */
+  .portfolio-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .portfolio-card-inner {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #7A9368 0%, #5F7A50 50%, #8B7FD9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Parallax shapes */
+  .parallax-shape {
+    @apply absolute rounded-full opacity-30 blur-3xl pointer-events-none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(148, 140, 125, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 140, 125, 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .dark .bg-grid {
+    background-image:
+      linear-gradient(rgba(184, 177, 163, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184, 177, 163, 0.05) 1px, transparent 1px);
+  }
+}
+
+/* Scroll reveal initial state */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 400ms; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 500ms; }
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cream-100 dark:bg-cream-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cream-300 dark:bg-cream-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cream-400 dark:bg-cream-600;
+}
