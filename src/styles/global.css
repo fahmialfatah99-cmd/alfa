@@ -176,8 +176,8 @@
   }
 }
 
-/* Scroll reveal initial state */
-.reveal {
+/* Scroll reveal - only hidden if JS is enabled (progressive enhancement) */
+.js .reveal {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
@@ -185,12 +185,12 @@
 }
 
 .reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
-/* Stagger children */
-.reveal-stagger > * {
+/* Stagger children - only if JS enabled */
+.js .reveal-stagger > * {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
