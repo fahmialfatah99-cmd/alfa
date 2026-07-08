@@ -176,23 +176,14 @@
   }
 }
 
-/* Scroll reveal - only hidden if JS is enabled (progressive enhancement) */
-.js .reveal {
-  opacity: 0;
-  transform: translateY(40px);
+/* Scroll reveal animation - content always visible, only adds motion effect */
+.reveal {
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.reveal.is-visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* Stagger children - only if JS enabled */
-.js .reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(30px);
+/* Stagger children */
+.reveal-stagger > * {
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }

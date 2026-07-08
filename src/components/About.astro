@@ -1,4 +1,6 @@
 ---
+import profileImg from '../assets/profile.jpg';
+
 const skills = [
   { name: 'Astro', level: 95 },
   { name: 'React / Next.js', level: 90 },
@@ -23,9 +25,11 @@ const techStack = ['Astro', 'React', 'Next.js', 'Tailwind', 'GSAP', 'TypeScript'
         <!-- Photo -->
         <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-cream-200 to-cream-300 dark:from-cream-700 dark:to-cream-800">
           <img
-            src={`${Astro.base}/profile.jpg`}
+            src={profileImg.src}
             alt="Foto Fahmi Alfatah"
             class="w-full h-full object-cover"
+            width={profileImg.width}
+            height={profileImg.height}
             loading="lazy"
           />
 
